@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y nano vim emacs git curl wget
+RUN apt-get update -y
 
 # install sudo
 RUN apt-get install -y sudo
