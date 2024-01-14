@@ -1,1 +1,1 @@
-# Docker image for playground
+# UNVT playground - Docker image for GIS playground
