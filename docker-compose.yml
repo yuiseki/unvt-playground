@@ -18,5 +18,5 @@ services:
       - "0.0.0.0:5174:5174"
     environment:
       - PASSWORD=kogaidan
-      - VSCODE_PROXY_URI=http://unvt-pi.local:{{port}}/
+      - VSCODE_PROXY_URI=http://unvt-pi.local:8080/proxy/{{port}}/
     tty: true
