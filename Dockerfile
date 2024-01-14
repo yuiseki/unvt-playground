@@ -54,5 +54,6 @@ RUN useradd -m user
 RUN echo user ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/user
 RUN chmod 0440 /etc/sudoers.d/user
 USER user
+ENV SHELL=/bin/bash
 
 WORKDIR /home/user
