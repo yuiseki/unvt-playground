@@ -1,5 +1,6 @@
 {
-    "recommendations": [
-        "ms-ceintl.vscode-language-pack-ja"
-    ]
+  "recommendations": [
+    "ms-vscode.live-server",
+    "ms-ceintl.vscode-language-pack-ja"
+  ]
 }

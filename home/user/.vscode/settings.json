@@ -1,4 +1,6 @@
 {
   "workbench.colorTheme": "Visual Studio Dark",
-  "window.menuBarVisibility": "visible"
+  "livePreview.defaultPreviewPath": "",
+  "livePreview.portNumber": 5173,
+  "livePreview.serverRoot": "/vite-react-map-gl-template/"
 }
