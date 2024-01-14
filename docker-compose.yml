@@ -3,7 +3,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    command: code-server --port 8080 --bind-addr=0.0.0.0:8080 --proxy-domain unvt.local /home/user --log warn
+    command: code-server --port 8080 --bind-addr=0.0.0.0:8080 --proxy-domain unvt-pi.local /home/user --log warn
     user: user:user
     volumes:
       - ./home/user:/home/user
