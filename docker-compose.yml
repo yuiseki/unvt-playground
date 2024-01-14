@@ -1,0 +1,20 @@
+services:
+  playground-docker:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: code-server --port 8080 --bind-addr=0.0.0.0:8080 /home/user --log warn
+    user: user:user
+    volumes:
+      - ./home/user:/home/user
+    ports:
+      - "0.0.0.0:8000:8000"
+      - "0.0.0.0:8080:8080"
+      - "0.0.0.0:3000:3000"
+      - "0.0.0.0:3030:3030"
+      - "0.0.0.0:5000:5000"
+      - "0.0.0.0:5050:5050"
+      - "0.0.0.0:5173:5173"
+    environment:
+      - PASSWORD=kogaidan
+    tty: true
