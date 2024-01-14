@@ -8,8 +8,8 @@ RUN apt-get install -y sudo
 # install git
 RUN apt-get install -y git
 
-# install gnupg and ca-certificates
-RUN apt-get install -y gnupg ca-certificates
+# install gnupg, ca-certificates and apt-transport-https
+RUN apt-get install -y gnupg ca-certificates apt-transport-https
 
 # install curl, wget and rsync
 RUN apt-get install -y curl wget rsync
@@ -18,9 +18,9 @@ RUN apt-get install -y curl wget rsync
 RUN apt-get install -y zip unzip gzip zlib1g-dev
 
 # install editors
-RUN apt-get install -y nano vim emacs
+RUN apt-get install -y nano vim emacs sed awk
 
-# install screen, tmux, htop, parallel
+# install screen, tmux, htop, parallel and tree
 RUN apt-get install -y screen tmux htop parallel tree
 
 # install jq
