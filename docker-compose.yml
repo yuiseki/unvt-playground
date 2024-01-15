@@ -3,7 +3,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    command: code-server --port 8080 --bind-addr=0.0.0.0:8080 --proxy-domain unvt-pi.local /home/user --log warn
+    command: code-server --log warn --port 8080 --bind-addr=0.0.0.0:8080 --disable-proxy --disable-telemetry --disable-getting-started-override /home/user
     user: user:user
     volumes:
       - ./home/user:/home/user
@@ -18,5 +18,4 @@ services:
       - "0.0.0.0:5174:5174"
     environment:
       - PASSWORD=kogaidan
-      - VSCODE_PROXY_URI=http://8080.unvt-pi.local/
     tty: true

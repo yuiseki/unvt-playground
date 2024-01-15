@@ -44,6 +44,8 @@ RUN code-server --install-extension GitHub.copilot
 RUN code-server --install-extension ms-python.python
 RUN code-server --install-extension ms-python.vscode-pylance
 RUN code-server --install-extension ms-toolsai.jupyter
+RUN code-server --install-extension ms-toolsai.jupyter-keymap
+RUN code-server --install-extension vscodevim.vim
 
 #
 # advanced dependencies
