@@ -18,17 +18,17 @@ RUN apt-get install -y curl wget rsync
 RUN apt-get install -y zip unzip gzip zlib1g-dev
 
 # install editors
-RUN apt-get install -y nano vim emacs sed awk
+RUN apt-get install -y nano vim emacs sed jq
 
 # install screen, tmux, htop, parallel and tree
 RUN apt-get install -y screen tmux htop parallel tree
 
-# install jq
-RUN apt-get install -y jq
-
 # install nodejs
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get update && apt-get install -y nodejs
+
+# install python3 and python-is-python3
+RUN apt-get install -y python3 python-is-python3
 
 # install VSCode code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -50,9 +50,6 @@ RUN code-server --install-extension vscodevim.vim
 #
 # advanced dependencies
 #
-# install python3 and python-is-python3
-RUN apt-get install -y python3 python-is-python3
-
 # install sqlite3 and libsqlite3-dev
 RUN apt-get install -y sqlite3 libsqlite3-dev
 
