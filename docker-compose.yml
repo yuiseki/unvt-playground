@@ -3,6 +3,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    hostname: playground
     command: code-server --log warn --port 8080 --bind-addr=0.0.0.0:8080 --disable-proxy --disable-telemetry --disable-getting-started-override /home/user
     user: user:user
     volumes:

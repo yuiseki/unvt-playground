@@ -67,6 +67,5 @@ USER user
 ENV SHELL=/bin/bash
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
-ENV PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 WORKDIR /home/user
