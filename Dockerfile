@@ -33,6 +33,17 @@ RUN apt-get update && apt-get install -y nodejs
 # install VSCode code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN code-server --install-extension MS-CEINTL.vscode-language-pack-ja
+RUN code-server --install-extension ms-vsliveshare.vsliveshare
+RUN code-server --install-extension vscode-icons-team.vscode-icons
+RUN code-server --install-extension ms-vscode.vscode-typescript-next
+RUN code-server --install-extension rvest.vs-code-prettier-eslint
+RUN code-server --install-extension streetsidesoftware.code-spell-checker
+RUN code-server --install-extension oderwat.indent-rainbow
+RUN code-server --install-extension mosapride.zenkaku
+RUN code-server --install-extension GitHub.copilot
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension ms-python.vscode-pylance
+RUN code-server --install-extension ms-toolsai.jupyter
 
 #
 # advanced dependencies
