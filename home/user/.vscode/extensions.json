@@ -1,6 +1,17 @@
 {
   "recommendations": [
+    "ms-ceintl.vscode-language-pack-ja",
     "ms-vscode.live-server",
-    "ms-ceintl.vscode-language-pack-ja"
+    "ms-vsliveshare.vsliveshare",
+    "vscode-icons-team.vscode-icons",
+    "ms-vscode.vscode-typescript-next",
+    "rvest.vs-code-prettier-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "oderwat.indent-rainbow",
+    "mosapride.zenkaku",
+    "GitHub.copilot",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter"
   ]
 }
