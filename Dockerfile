@@ -65,5 +65,7 @@ RUN echo user ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/user
 RUN chmod 0440 /etc/sudoers.d/user
 USER user
 ENV SHELL=/bin/bash
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 WORKDIR /home/user
