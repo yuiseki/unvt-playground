@@ -30,6 +30,9 @@ RUN apt-get update && apt-get install -y nodejs
 # install python3 and python-is-python3
 RUN apt-get install -y python3 python-is-python3
 
+# install Java for GIS tools like Planetiler
+RUN apt-get install -y openjdk-21-jdk
+
 # install VSCode code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 RUN code-server --install-extension MS-CEINTL.vscode-language-pack-ja
@@ -47,6 +50,13 @@ RUN code-server --install-extension ms-toolsai.jupyter
 RUN code-server --install-extension ms-toolsai.jupyter-keymap
 RUN code-server --install-extension vscodevim.vim
 
+# install additional GIS and web development extensions
+RUN code-server --install-extension ms-vscode.live-server
+RUN code-server --install-extension ritwickdey.liveserver
+RUN code-server --install-extension bradlc.vscode-tailwindcss
+RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension ms-vscode.vscode-json
+
 #
 # advanced dependencies
 #
@@ -59,6 +69,37 @@ RUN apt-get install -y build-essential autoconf automake gcc g++ make cmake
 # install gis related packages
 RUN apt-get install -y gdal-bin pdal
 RUN apt-get install -y libgeos-dev libproj-dev libgdal-dev
+
+# install tippecanoe for vector tile generation
+RUN apt-get install -y git build-essential libsqlite3-dev zlib1g-dev
+RUN git clone https://github.com/felt/tippecanoe.git /tmp/tippecanoe
+RUN cd /tmp/tippecanoe && make -j && make install
+RUN rm -rf /tmp/tippecanoe
+
+# install osmium-tool for OSM data processing
+RUN apt-get install -y osmium-tool
+
+# install essential Node.js GIS tools globally
+RUN npm install -g @unvt/charites
+RUN npm install -g pmtiles
+RUN npm install -g @mapbox/geojsonhint
+RUN npm install -g @turf/turf
+RUN npm install -g geojson-validation
+
+# install Python GIS libraries
+RUN apt-get install -y python3-pip
+RUN pip3 install --break-system-packages geopandas folium rasterio fiona shapely pyproj geopy contextily mapclassify
+
+# install Martin tile server (Rust-based)
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN cargo install martin --locked
+
+# install TileServer GL
+RUN npm install -g tileserver-gl
+
+# install PostgreSQL and PostGIS for spatial database
+RUN apt-get install -y postgresql postgresql-contrib postgis
 
 RUN useradd -m user
 RUN echo user ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/user
